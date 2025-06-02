@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 
 # define functions
 def main(args):
-    # TO DO: enable autologging
+    # TO DO: enable autologgingpy
 
 
     # read data
@@ -34,6 +34,12 @@ def get_csvs_df(path):
 
 
 # TO DO: add function to split data
+def split_data(df):
+    # TO DO: implement data splitting logic
+    # For now, we will just return the same data as train and test
+    X = df.drop(columns=['Diabetic'])  # Assuming 'target' is the label column
+    y = df['Diabetic']  # Assuming 'Diabetic' is the label column
+    return X, X, y, y  # Returning the same data for both train and test for simplicity
 
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
